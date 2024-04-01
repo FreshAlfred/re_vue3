@@ -4,11 +4,11 @@
 </template>
 
 <script lang="ts">
-    import Person from './components/Person.vue'
+    // import Person from './components/Person.vue'
     import Car from './components/Car.vue'
     export default {
         name: 'App',
-        components: { Person, Car }
+        components: { Car }
     }
 </script>
 
