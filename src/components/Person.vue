@@ -9,15 +9,15 @@
 </template>
 
 <script lang="ts" setup name="Person-alfred">
-let name = 'Alfred'
-let age = 18
+import { ref } from 'vue'
+let name = ref('Alfred')
+let age = ref(18)
 let tel = '17318400111'
 function changeName() {
-    name = '黄小俊'
+    name.value = '黄小俊'
 }
 function changeAge() {
-    age += 1
-    console.log(age);
+    age.value += 1
 }
 function showTel() {
     alert(tel)
