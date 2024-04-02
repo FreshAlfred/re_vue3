@@ -1,27 +1,18 @@
 <template>
     <div class="person">
-        <h2>name: {{ name }}</h2>
-        <h2>age: {{ age }}</h2>
-        <button @click="showTel">查看联系方式</button>
-        <button @click="changeName">修改名字</button>
-        <button @click="changeAge">修改年龄</button>
+        姓：<input type="text" v-model="firstName"><br />
+        名：<input type="text" v-model="lastName"><br />
+        全名：<span>{{ fullName }}</span><br />
     </div>
 </template>
 
 <script lang="ts" setup name="Person-alfred">
-import { ref } from 'vue'
-let name = ref('Alfred')
-let age = ref(18)
-let tel = '17318400111'
-function changeName() {
-    name.value = '黄小俊'
-}
-function changeAge() {
-    age.value += 1
-}
-function showTel() {
-    alert(tel)
-}
+import { computed, ref } from 'vue'
+let firstName = ref('zhang')
+let lastName = ref('san')
+let fullName = computed(() => {
+    return firstName.value.slice(0, 1).toUpperCase() + firstName.value.slice(1) + '-' + lastName.value
+})
 </script>
 
 <style scoped>

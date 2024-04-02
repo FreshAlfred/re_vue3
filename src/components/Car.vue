@@ -9,7 +9,7 @@
 import { reactive } from 'vue'
     let car = reactive({brand: '小米', price: 210000})
     function changePrice() {
-        car.price += 10000
+        Object.assign(car, { price: car.price + 100, brand: '大米' })
     }
 </script>
 
