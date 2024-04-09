@@ -1,9 +1,9 @@
 <template>
     <h2 class="title">路由测试</h2>
     <div class="navigate">
-        <RouterLink to="/">首页</RouterLink>
-        <RouterLink to="/News">新闻</RouterLink>
-        <RouterLink :to="{ path: '/About' }">关于</RouterLink>
+        <RouterLink to="/" active-class="active">首页</RouterLink>
+        <RouterLink to="/News" active-class="active">新闻</RouterLink>
+        <RouterLink :to="{ name: 'about' }" active-class="active">关于</RouterLink>
     </div>
     <div class="main-content">
         <RouterView />

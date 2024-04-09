@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/component/Home.vue'
-import About from '@/component/About.vue'
-import News from '@/component/News.vue'
+import Home from '@/page/Home.vue'
+import About from '@/page/About.vue'
+import News from '@/page/News.vue'
+import Detail from '@/page/Detail.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -14,7 +15,17 @@ const router = createRouter({
         {
             path: '/News',
             name: 'news',
-            component: News
+            component: News,
+            children: [
+                {
+                    path: 'detail/:id/:title/:content',
+                    name: 'detail',
+                    component: Detail,
+                    props(route) {
+                        return route.params
+                    }
+                }
+            ]
         },
         {
             path: '/About',
