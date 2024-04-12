@@ -3,6 +3,7 @@
     <h3>子组件2</h3>
 		<h4>电脑：{{ computer }}</h4>
 		<h4>哥哥给的玩具：{{ toy }}</h4>
+		<button @click="emitter.emit('send-computer', computer)">电脑给哥哥</button>
   </div>
 </template>
 
