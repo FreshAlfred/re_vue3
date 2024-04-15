@@ -7,9 +7,11 @@
 </template>
 
 <script setup lang="ts" name="Child2">
-import { ref } from 'vue';
+import { ref, defineExpose } from 'vue';
+
 let book = ref(4);
 let car = ref('自行车')
+defineExpose(['book'])
 </script>
 
 <style scoped>
