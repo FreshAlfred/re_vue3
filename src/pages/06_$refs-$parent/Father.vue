@@ -17,11 +17,14 @@ import { ref } from 'vue';
 let c1 = ref();
 let c2 = ref();
 let money = ref(100);
-function getRefs(refs: any) {
+
+function getRefs(refs:{[key:string]: any}) {
+	console.log(refs)
 	for(let key in refs) {
-		console.log(refs[key].book);
+		refs[key].book += 3
 	}
 }
+defineExpose({money})
 </script>
 
 <style scoped>

@@ -3,15 +3,20 @@
 		<h3>子组件2</h3>
 		<h4>车：{{ car }}</h4>
 		<h4>书籍：{{ book }}本</h4>
+		<button @click="changeMoney($parent)">点我拿父亲的钱</button>
 	</div>
 </template>
 
 <script setup lang="ts" name="Child2">
-import { ref, defineExpose } from 'vue';
+import { ref } from 'vue';
 
 let book = ref(4);
 let car = ref('自行车')
-defineExpose(['book'])
+defineExpose({book})
+
+function changeMoney(parent: any) {
+	parent.money --
+}
 </script>
 
 <style scoped>

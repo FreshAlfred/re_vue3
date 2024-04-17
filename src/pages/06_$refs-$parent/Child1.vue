@@ -7,10 +7,10 @@
 </template>
 
 <script setup lang="ts" name="Child1">
-import { ref, defineExpose } from 'vue';
+import { ref } from 'vue';
 let toy = ref('月亮公主')
 let book = ref(3)
-defineExpose(['book'])
+defineExpose({book})
 </script>
 
 <style scoped>
